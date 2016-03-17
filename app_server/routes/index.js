@@ -1,11 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-var homepaqe = require('../controllers/main');
+var home = require('../controllers/main');
+var recipes = require('../controllers/recipe');
 
 
+router.get('/', home.index);
+router.get('/recipesearch', recipes.search);
+router.get('/recipe', recipes.recipe);
+router.get('/recipeadd', recipes.add);
 
-/* GET home page. */
-router.get('/', homepaqe.index);
 
 module.exports = router;
