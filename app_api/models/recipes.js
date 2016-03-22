@@ -17,7 +17,6 @@ var recipeSchema = new mongoose.Schema({
 
 
 mongoose.model('Ingredient', ingredientSchema);
-mongoose.model('Recipes', recipeSchema);
-
+mongoose.model('Recipe', recipeSchema);
 
 

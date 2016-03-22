@@ -1,4 +1,9 @@
+$ mongo
 db.ingredient.save({name: 'Carrot'})
+> show dbs
+> use recipe
+> show collections
+db.collectionName.find(queryObject)
 
 //remote db uri
 mongodb://eranot:Whatthefuck4@ds023108.mlab.com:23108/eranot
@@ -25,3 +30,5 @@ $ mongo ds023108.mlab.com:23108/eranot -u eranot -p Whatthefuck4
 > db.ingredient.find()
 
 heroku config:get NODE_ENV
+
+db.recipe.save({name: 'Carrot Soup',ingredients: [{name: 'Carrots', quantity: '0'},{name: 'Celery', quantity: 'Half bunch'},{name: 'Potato', quantity: '4'}],instructions: 'Blend all together and season'})
