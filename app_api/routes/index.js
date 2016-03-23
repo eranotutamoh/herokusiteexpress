@@ -5,7 +5,8 @@ var ctrlRecipes = require('../controllers/recipes');
 router.get('/recipe/:recipeId', ctrlRecipes.singleRecipe);
 router.post('/recipeadd', ctrlRecipes.addRecipe);
 router.get('/ingredients', ctrlRecipes.ingredientList);
-router.put('/recipeedit', ctrlRecipes.editRecipe);
-router.delete('/recipedelete', ctrlRecipes.deleteRecipe);
+router.get('/ingredientsearch', ctrlRecipes.search);
+router.put('/recipeedit/:recipeId', ctrlRecipes.editRecipe);
+router.delete('/recipedelete/:recipeId', ctrlRecipes.deleteRecipe);
 
 module.exports = router;

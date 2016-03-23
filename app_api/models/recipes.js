@@ -1,8 +1,5 @@
 var mongoose = require( 'mongoose' );
 
-var ingredientSchema = new mongoose.Schema({
-    name: {type: String, required: true},
-});
 
 var ingredientsSchema = new mongoose.Schema({
     name: {type: String, required: true},
@@ -16,7 +13,7 @@ var recipeSchema = new mongoose.Schema({
 });
 
 
-mongoose.model('Ingredient', ingredientSchema);
 mongoose.model('Recipe', recipeSchema);
+
 
 
