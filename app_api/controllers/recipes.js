@@ -62,10 +62,7 @@ module.exports.addRecipe = function (req, res) {
         }
     });
 };
-// dynamic dropdown ingredient search list
-module.exports.ingredientList = function (req, res) {
-    sendJsonResponse(res, 200, {"status" : "success"});
-};
+
 
 module.exports.editRecipe = function (req, res) {
     if (!req.params.recipeId) {
@@ -118,6 +115,29 @@ module.exports.deleteRecipe = function (req, res) {
             "message": "No recipeId"
         }); }
 
+};
+
+module.exports.listIngredients = function (req, res) {
+        recipesModel
+            .distinct('ingredients.name')
+            .exec(function(err, list) {
+                if (!list) {
+                    sendJsonResponse(res, 404, {
+                        "message": "List not found"
+                    });
+                    return;
+                }  else if (err) {
+                    sendJsonResponse(res, 404, err);
+                    return;
+                }
+                var reg = new RegExp("^" +req.query.ing , 'i')
+                var regexpList = list.filter(
+                    function(ingredient) {
+                        return reg.test(ingredient);
+                    }
+                );
+                sendJsonResponse(res, 200, regexpList);
+            });
 };
 
 var sendJsonResponse = function(res, status, content) {

@@ -4,9 +4,11 @@ block content
   h1= text.h1
   p #{text.info}
   form
-    input(type=text)
+    input(type='text' id='search')
   ul
   each single in ingredients
-    li=single
+    li=single.name
+
+  script(src='/javascripts/search.js')
 
 
