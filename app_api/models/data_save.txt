@@ -18,7 +18,7 @@ mongodb://eranot:Whatthefuck4@ds023108.mlab.com:23108/eranot
 $ heroku config:set MONGOLAB_URI=your_db_uri
 
 //Dump (export) local database to temp storage
-$ mongodump -h localhost:27017 -d recipe -o ~/code/mongodump
+    $ mongodump -h localhost:27017 -d recipe -o ~/code/mongodump
 
 //Beam up local to remote
 $ mongorestore -h ds023108.mlab.com:23108 -d eranot -u eranot -p Whatthefuck4 ~/code/mongodump/recipe
