@@ -14,8 +14,8 @@ module.exports.search = function (req, res) {
         method : "GET",
         json : {},
         qs : {
-            ing1 : 'Carrots',
-            ing2 : 'Celery'
+            ing1 : 'oregano',
+            ing2 : 'cheese'
         }
     };
     request(

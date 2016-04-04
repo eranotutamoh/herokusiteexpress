@@ -3,8 +3,12 @@ extends layout
 block content
   h1= text.h1
   p #{text.info}
-  form
-    input(type='text' id='search')
+  form(autocomplete='toad')
+    input(type='text' id='search' name='toad' autocomplete='toad')
+    div(id='suggest')
+        a(href="#ingred") Carrots
+        a(href="#ingred") Potato
+        a(href="#ingred") Spinach
   ul
   each single in ingredients
     li=single.name

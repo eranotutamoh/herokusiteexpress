@@ -31,4 +31,4 @@ $ mongo ds023108.mlab.com:23108/eranot -u eranot -p Whatthefuck4
 
 heroku config:get NODE_ENV
 
-db.recipe.save({name: 'Carrot Soup',ingredients: [{name: 'Carrots', quantity: '0'},{name: 'Celery', quantity: 'Half bunch'},{name: 'Potato', quantity: '4'}],instructions: 'Blend all together and season'})
+db.recipes.save({name: 'Toasted Sandwich',ingredients: [{name: 'cheese', quantity: '0'},{name: 'oregano', quantity: 'Half bunch'},{name: 'Bread', quantity: 'Slice'}],instructions: 'Top with cheese and grill'})
