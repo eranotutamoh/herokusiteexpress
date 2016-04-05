@@ -29,7 +29,7 @@ module.exports.search = function (req, res) {
         console.log('L:',Object.keys(req.query).length)
         recipesModel
             .find({'ingredients.name' : req.query.ing1, 'ingredients.name' : req.query.ing2})
-            .select('')
+            .select('name')
             .exec(function(err, recipe) {
                 if (!recipe) {
                     sendJsonResponse(res, 404, {

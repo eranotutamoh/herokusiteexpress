@@ -1,18 +1,18 @@
 extends layout
 
 block content
-  h1= text.h1
-  p #{text.info}
-  form(autocomplete='toad')
-    input(type='text' id='search' name='toad' autocomplete='toad')
-    div(id='suggest')
-        a(href="#ingred") Carrots
-        a(href="#ingred") Potato
-        a(href="#ingred") Spinach
-  ul
-  each single in ingredients
+  div#col2
+   p #{text.info}
+   form
+    input(type='text' id='search' name='toad' autocomplete='off')
+    div#suggest
+  ul#col3
+   li(style='list-style:none') Recipes with
+   each single in ingredients
     li=single.name
 
-  script(src='/javascripts/search.js')
+    script(src='/javascripts/suggest.js')
+    script(src='/javascripts/search.js')
+
 
 

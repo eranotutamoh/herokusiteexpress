@@ -3,7 +3,11 @@ body {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
     color: plum;
 }
-
+nav, #col2, #col3 {
+    display: inline-block;
+    margin-right: 15px;
+    vertical-align: top;
+}
 a {
     color: #00B7FF;
 }
@@ -20,7 +24,7 @@ input {
     z-index: 1;
 }
 form div {
-    border: 1px solid grey;
+    border: none;
     border-top: none;
     position: relative;
     top: -5px;
@@ -31,6 +35,17 @@ form a {
     text-decoration: none  ;
     display: block;
 }
+form a:hover {
+    background-color: darksalmon;
+}
+form a:active {
+    background-color: crimson;
+}
 .hot {
     background-color: crimson;
+}
+nav, #col2, #col3 {
+    display: inline-block;
+    margin-right: 15px;
+    vertical-align: top;
 }

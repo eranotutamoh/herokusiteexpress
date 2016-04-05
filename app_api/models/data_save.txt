@@ -27,7 +27,7 @@ $ mongorestore -h ds023108.mlab.com:23108 -d eranot -u eranot -p Whatthefuck4 ~/
 $ mongo ds023108.mlab.com:23108/eranot -u eranot -p Whatthefuck4
 
 > show collections
-> db.ingredient.find()
+> db.recipes.find()
 
 heroku config:get NODE_ENV
 
