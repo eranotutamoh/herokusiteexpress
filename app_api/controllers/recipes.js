@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var recipesModel = mongoose.model('Recipe');
 
+// RETURN A SINGLE RECIPE
 module.exports.singleRecipe = function (req, res) {
     if (req.params && req.params.recipeId) {
         recipesModel
@@ -24,11 +25,37 @@ module.exports.singleRecipe = function (req, res) {
     }
 };
 
+// RETURN ALL RECIPES
+module.exports.recipes = function (req, res) {
+    recipesModel
+        .find()
+        .sort('name')
+        .select({ _id : 1 , name : 1})
+        .exec(function(err, recipes) {
+            if (!recipes) {
+                sendJsonResponse(res, 404, {
+                    "message": "recipeId not found"
+                });
+                return;
+            }  else if (err) {
+                sendJsonResponse(res, 404, err);
+                return;
+            }
+            sendJsonResponse(res, 200, recipes);
+        });
+};
+
+// SEARCH FOR RECIPES THAT MATCH INGREDIENTS
 module.exports.search = function (req, res) {
-    if (true) {
-        console.log('L:',Object.keys(req.query).length)
+        var params = [];
+        for (var propName in req.query) {
+            if (req.query.hasOwnProperty(propName)) {
+                var param = {'ingredients.name' : req.query[propName]};
+                params.push(param);
+            }
+        }
         recipesModel
-            .find({'ingredients.name' : req.query.ing1, 'ingredients.name' : req.query.ing2})
+            .find( { $and : params } )
             .select('name')
             .exec(function(err, recipe) {
                 if (!recipe) {
@@ -42,17 +69,16 @@ module.exports.search = function (req, res) {
                 }
                 sendJsonResponse(res, 200, recipe);
             });
-    } else {
-        sendJsonResponse(res, 404, {
-            "message": "No recipeId in request"
-        });
-    }
 };
 
+// INSERT RECIPE TO DB
 module.exports.addRecipe = function (req, res) {
+    console.log('recipe add api', req.body.ingredients)
+    console.log('recipe add api', req.body.name)
+    console.log('recipe add api', req.body.instructions)
     recipesModel.create({
         name: req.body.name,
-        ingredients: formatIngredients(req),
+        ingredients: req.body.ingredients,
         instructions:req.body.instructions
     }, function(err, recipe) {
         if (err) {
@@ -63,8 +89,12 @@ module.exports.addRecipe = function (req, res) {
     });
 };
 
-
+// EDIT RECIPE
 module.exports.editRecipe = function (req, res) {
+    console.log('recipe edit ing', req.body.ingredients)
+    console.log('recipe edit name', req.body.name)
+    console.log('recipe edit instruction', req.body.instructions)
+    console.log('recipe edit id', req.params.recipeId)
     if (!req.params.recipeId) {
         sendJsonResponse(res, 404, {
             "message": "Not found, recipeId is required"
@@ -84,7 +114,7 @@ module.exports.editRecipe = function (req, res) {
                     return;
                 }
                 recipe.name = req.body.name,
-                recipe.ingredients = formatIngredients(req),
+                recipe.ingredients = req.body.ingredients,
                 recipe.instructions = req.body.instructions
                 recipe.save(function(err, recipe) {
                     if (err) {
@@ -96,6 +126,7 @@ module.exports.editRecipe = function (req, res) {
             } );
 };
 
+// DELETE RECIPE
 module.exports.deleteRecipe = function (req, res) {
     var recipeId = req.params.recipeId;
     if (recipeId) {
@@ -117,6 +148,7 @@ module.exports.deleteRecipe = function (req, res) {
 
 };
 
+// GET LIST INGREDIENTS FOR AUTO SUGGEST
 module.exports.listIngredients = function (req, res) {
         recipesModel
             .distinct('ingredients.name')
@@ -140,18 +172,9 @@ module.exports.listIngredients = function (req, res) {
             });
 };
 
+// GENEREIC RESPONSE
 var sendJsonResponse = function(res, status, content) {
     res.status(status);
     res.json(content);
 };
 
-
-var formatIngredients = function (req) {
-    var arr = [];
-    for(key in req.body.ingredients) {
-        var temp = req.body.ingredients[key].split(',');
-        var obj = {name : temp[0] , quantity: temp[1]}
-        arr.push(obj);
-    }
-    return arr
-};

@@ -4,8 +4,12 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    nav
-     a(href='recipesearch') Search
-     a(href='recipe') Recipe
-     a(href='recipeadd') Add Recipe
-    block content
+    div.width
+        nav
+         a(href='/recipesearch/') Search
+         a(href='/recipes/') Recipes
+         a(href='/recipeadd/') Add Recipe
+        section.mid
+          block content1
+        section.right
+          block content2

@@ -1,0 +1,26 @@
+extends layout
+
+block content1
+    h1 Edit !{title}
+    form(action='' method='post')
+        label Recipe name
+        input(type='text' name='name' value="#{title}")
+        h4 Ingredients
+        each ing in ingred
+            .ingredients
+                label Quantity
+                input.small(type='text' name='quantity' value='#{ing.quantity}')
+                label Name
+                input(type='text' name='iname' value='#{ing.name}')
+        a.another(href='#') +
+        label.beforeThis Instructions
+        textarea(rows='7' cols='40' name='instructions' ) #{text.desc}
+        input(type="submit", value="Add")
+        input(type='hidden' name='recipeid' value='#{id}')
+    .ingredients
+        label Quantity
+        input.small(type='text' name='quantity')
+        label Name
+        input(type='text' name='iname')
+
+    script(src='/javascripts/addrecipe.js')

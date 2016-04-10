@@ -1,0 +1,13 @@
+extends layout
+
+block content1
+  h1 #{text.h1}
+  div.recipes
+   each recipe in recipes
+     div(id='ID'+recipe._id)
+       button.delete Delete
+       button.edit Edit
+       a(href='/recipe/'+recipe._id class='recipe')= recipe.name
+
+   script(src='/javascripts/ajaxer.js')
+   script(src='/javascripts/recipes.js')

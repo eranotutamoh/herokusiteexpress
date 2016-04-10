@@ -1,5 +1,10 @@
 extends layout
 
-block content
-  h1= title
-    p Here is a single recipe
+block content1
+  h1 #{text.h1}
+  p !{text.desc.replace(/\n/g, '<br/>')}
+  p #[ingred}
+   each ing in ingred
+     p= ing.name
+     p= ing.quantity
+

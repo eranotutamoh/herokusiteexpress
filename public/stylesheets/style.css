@@ -1,19 +1,41 @@
 body {
-    padding: 50px;
+    margin: auto    ;
+    padding: 0;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
     color: plum;
 }
-nav, #col2, #col3 {
+.width {
+    background-color: lightgray;
+    margin: 0 auto;
+    width: 1024px;
+}
+nav, section {
     display: inline-block;
-    margin-right: 15px;
     vertical-align: top;
+    height: 600px;
+}
+nav {
+    background-color: darkslateblue;
+    height: 580px;
+    padding: 20px 0 0 25px;
+    width: 175px;
+}
+.mid {
+    background-color: darkgreen;
+    padding: 0 15px 0 25px;
+    width: 460px;
+}
+.right {
+    background-color: brown;
+    padding: 0 15px 0 25px;
+    width: 284px;
 }
 a {
     color: #00B7FF;
+    text-decoration: none;
 }
 nav a {
     display: block;
-    text-decoration: none;
     margin: 5px 0;
 }
 input, textarea {
@@ -23,7 +45,11 @@ input, textarea {
 input {
     z-index: 1;
 }
-form div {
+form a {
+     text-decoration: none  ;
+     display: block;
+ }
+#suggest {
     border: none;
     border-top: none;
     position: relative;
@@ -31,21 +57,46 @@ form div {
     width: 139px;
     z-index: 10;
 }
-form a {
-    text-decoration: none  ;
-    display: block;
-}
-form a:hover {
+
+#sugget a:hover {
     background-color: darksalmon;
 }
-form a:active {
+#suggest a:active {
     background-color: crimson;
 }
 .hot {
     background-color: crimson;
 }
-nav, #col2, #col3 {
+.recipes div {
+    margin: 0 0 15px 15px;
+}
+.recipes div a {
+margin-left: 25px;
+}
+.ingredients {
+    display: none;
+}
+form .ingredients {
+    margin: 5px 0 10px;
+    display: block;
+}
+.ingredients input {
     display: inline-block;
-    margin-right: 15px;
-    vertical-align: top;
+    margin: 0 10px;
+}
+.small {
+    width: 60px;
+}
+h4 {
+    margin: 20px 0 0;
+}
+.another {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 2px 2px;
+    display: block;
+    font-size: 1.4em;
+    margin: 0 0 20px;
+    text-indent: 7px;
+    width: 30px;
 }

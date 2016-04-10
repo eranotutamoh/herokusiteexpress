@@ -1,16 +1,17 @@
 extends layout
 
-block content
-  div#col2
+block content1
+  div
    p #{text.info}
    form
     input(type='text' id='search' name='toad' autocomplete='off')
     div#suggest
-  ul#col3
-   li(style='list-style:none') Recipes with
-   each single in ingredients
-    li=single.name
+block content2
+  #col3
+    p#ingText Recipes with:
+    ul
 
+    script(src='/javascripts/ajaxer.js')
     script(src='/javascripts/suggest.js')
     script(src='/javascripts/search.js')
 

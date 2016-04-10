@@ -1,9 +1,24 @@
 extends layout
 
-block content
+block content1
   h1= title
-  form
-    input(type='text')
-    input(type='text')
-    input(type='text')
-    textarea(rows='5' cols='10 ')
+  form(action='' method='post')
+    label Recipe name
+    input(type='text' name='name')
+    h4 Ingredients
+    .ingredients
+      label Quantity
+      input.small(type='text' name='quantity')
+      label Name
+      input(type='text' name='iname')
+    a.another(href='#') +
+    label.beforeThis Instructions
+    textarea(rows='7' cols='40' name='instructions')
+    input(type="submit", value="Add")
+  .ingredients
+    label Quantity
+    input.small(type='text' name='quantity')
+    label Name
+    input(type='text' name='iname')
+
+    script(src='/javascripts/addrecipe.js')
