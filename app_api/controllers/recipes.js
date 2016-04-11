@@ -82,6 +82,7 @@ module.exports.addRecipe = function (req, res) {
         instructions:req.body.instructions
     }, function(err, recipe) {
         if (err) {
+            console.log('This 400' , err);
             sendJsonResponse(res, 400, err);
         } else {
             sendJsonResponse(res, 201, recipe);
@@ -118,6 +119,7 @@ module.exports.editRecipe = function (req, res) {
                 recipe.instructions = req.body.instructions
                 recipe.save(function(err, recipe) {
                     if (err) {
+                        console.log('This 404' , err);
                         sendJsonResponse(res, 404, err);
                     } else {
                         sendJsonResponse(res, 200, recipe);

@@ -12,15 +12,17 @@ block content1
                 input.small(type='text' name='quantity' value='#{ing.quantity}')
                 label Name
                 input(type='text' name='iname' value='#{ing.name}')
+                a.takeaway(href='#') -
         a.another(href='#') +
         label.beforeThis Instructions
         textarea(rows='7' cols='40' name='instructions' ) #{text.desc}
-        input(type="submit", value="Add")
+        input(type="submit", value="Edit")
         input(type='hidden' name='recipeid' value='#{id}')
     .ingredients
         label Quantity
         input.small(type='text' name='quantity')
         label Name
         input(type='text' name='iname')
+        a.takeaway(href='#') -
 
     script(src='/javascripts/addrecipe.js')

@@ -15,7 +15,7 @@
     Array.prototype.forEach.call(editButtons, function( button ){
         button.addEventListener('click' , function(){
             var id =  button.parentNode.id.substr(2);
-            location = '/recipeedit/' +id+ '/true'
+            location = '/recipeedit/' +id+ '/true   '
         })
     });
 

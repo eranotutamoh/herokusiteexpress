@@ -2,6 +2,8 @@ extends layout
 
 block content1
   h1= title
+  - if (error == "val")
+    p.error Please fill in all Fields
   form(action='' method='post')
     label Recipe name
     input(type='text' name='name')
@@ -20,5 +22,5 @@ block content1
     input.small(type='text' name='quantity')
     label Name
     input(type='text' name='iname')
-
+    a.takeaway(href='#') -
     script(src='/javascripts/addrecipe.js')

@@ -97,21 +97,32 @@ module.exports.editpost = function (req, res) {
         method : "PUT",
         json : postdata
     };
-    console.log(requestOptions.url);
+    if (!postdata.name || postdata.ingredients.length === 0 || !postdata.instructions) {
+        res.redirect('/recipeedit/' +req.body.recipeid+ '/true?err=val');
+        return false;
+    }
     request(
         requestOptions,
         function(err, response, body) {
             if (response.statusCode === 200) {
                 res.redirect('/recipe/' + req.body.recipeid);
-            } else {
-                console.log(response.statusCode);
-            } }
+            }
+            else if (response.statusCode === 404 && body.name && body.name === "ValidationError" ) {
+                res.redirect('/recipeedit/' +req.body.recipeid+ '/true?err=val');
+            }
+            else {
+                console.log('Bad ass edit' , response.statusCode);
+            }
+        }
     );
 };
 
 // ADD A RECIPE
 module.exports.add = function (req, res) {
-    res.render('recipeadd', { title: 'Add Recipe' });
+    res.render('recipeadd', {
+        title: 'Add Recipe',
+        error: req.query.err
+    });
 };
 
 module.exports.addpost = function (req, res) {
@@ -127,14 +138,25 @@ module.exports.addpost = function (req, res) {
         url : apiOptions.server + path,
         method : "POST",
         json : postdata
-    }; request(
+    };
+    if (!postdata.name || postdata.ingredients.length === 0 || !postdata.instructions) {
+        res.redirect('/recipeadd?err=vall');
+        return false;
+    }
+    request(
         requestOptions,
         function(err, response, body) {
             if (response.statusCode === 201) {
                 res.redirect('/recipe/' + response.body._id);
-            } else {
-                console.log(response.statusCode);
-            } }
+            }
+            else if (response.statusCode === 400 && body.name && body.name === "ValidationError" ) {
+                res.redirect('/recipeadd?err=val');
+            }
+            else {
+                console.log(body);
+                res.render('recipeadd', { title: 'Add Recipe' });
+            }
+        }
     );
 };
 
@@ -145,7 +167,7 @@ var formatIngredients = function (ings) {
     for(key in ingsObj) {
         var temp = ingsObj[key].split(',');
         var obj = {name : temp[0] , quantity: temp[1]}
-        arr.push(obj);
+        if(obj.name) arr.push(obj);
     }
     return arr
 };
