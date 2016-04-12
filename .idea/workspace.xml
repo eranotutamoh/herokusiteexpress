@@ -26,8 +26,8 @@
       <file leaf-file-name="git.jade" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app_server/views/code/git.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.31422272">
-              <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.61190736">
+              <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -717,8 +717,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app_server/views/code/git.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31422272">
-          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.61190736">
+          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
           <folding />
         </state>
       </provider>
