@@ -1,0 +1,39 @@
+body {
+    background-color: #262B23;
+    margin: auto    ;
+    padding: 0;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    color: #333 ;
+}
+.width {
+    background-color: lightgray;
+    margin: 0 auto;
+    padding: 25px 25px 25px 240px;
+    width: 759px;
+}
+nav {
+    background-color: gold;
+    left: 350px;
+    padding: 5px;
+    position: absolute;
+    top: 47px;
+    width: 150px;
+}
+nav a {
+    color: #333;
+    display: block;
+    margin: 0 0 10px;
+    text-decoration: none;
+}
+dt, dd {
+    display: inline-block;
+    margin: 0 0 15px;
+    vertical-align: top;
+}
+dd {
+    width: 600px;
+}
+dt {
+    width: 100px;
+}
+dt::before { content: "$ "; }
