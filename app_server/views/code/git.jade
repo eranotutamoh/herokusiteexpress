@@ -17,8 +17,18 @@ block content
     dt git diff
     dd [--staged]
     dt git commit
-    dd [-a] <i>Quick commit,skip add</i>&nbsp; -m
+    dd [-a] <i>Quick commit, skip add</i>&nbsp; -m
     dt git rm
     dd redundant.js <i>Removes from GIT AND deletes</i>
-    
+    dt git rm
+    dd ---cached notrack.js <i>Removes from tracking but no delete</i>
+    dt git log
+    dd --oneline --decorate
+    dt git branch
+    dd mynewbranch
+    dt git checkout
+    dd &nbsp;&nbsp;thisbranch
+    dt git checkout
+    dd -b mynewbranch <i>Create branch and checkout in one</i>
+
 
