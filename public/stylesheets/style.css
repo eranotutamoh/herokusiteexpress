@@ -1,14 +1,16 @@
 body {
-    background-color: #262B23;
+    background-color: #252B0D;
     margin: auto    ;
     padding: 0;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
     color: #F3DF3E;
 }
 .width {
-    background-color: lightgray;
     margin: 0 auto;
     width: 1024px;
+    border: 7px solid #394A07;
+    border-top: none;
+    border-radius: 0 0 10px 10px
 }
 nav, section {
     display: inline-block;
@@ -16,18 +18,18 @@ nav, section {
     height: 600px;
 }
 nav {
-    background-color:  #670C33;
+    background-color:  #190C00;
     height: 580px;
     padding: 20px 0 0 25px;
     width: 175px;
 }
 .mid {
-    background-color: #2C4D00;
+    background-color: #542800;
     padding: 0 15px 0 25px;
     width: 460px;
 }
 .right {
-    background-color:#343300 ;
+    background-color:#341900 ;
     padding: 0 15px 0 25px;
     width: 284px;
 }
@@ -116,8 +118,10 @@ dt {
 }
 .takeaway {
     display: inline-block;
-    line-height: 0.9em;
-    text-indent: 9px;
-    margin:0;
-    vertical-align: text-top;
+    line-height: 13px;
+    text-indent: 8px;
+    margin: 4PX 0 0;
+    vertical-align: top;
+    font-size: 24px;
+    padding: 0;
 }

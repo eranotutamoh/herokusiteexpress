@@ -19,22 +19,30 @@ block content
     dt git commit
     dd [-a] <i>Quick commit, skip add</i>&nbsp; -m
     dt git rm
-    dd redundant.js <i>Removes from GIT AND deletes</i>
+    dd &lt;file.js&gt; <i>Removes from GIT AND deletes</i>
     dt git rm
-    dd ---cached notrack.js <i>Removes from tracking but no delete</i>
+    dd ---cached &lt;file.js&gt; <i>Removes from tracking but no delete</i>
     dt git log
     dd --oneline --decorate
     dt git branch
-    dd mynewbranch
+    dd <i>List branches</i> [-v] <i>see commits</i> [--merged --no-merged] <i>branches that you have or have not yet merged into the branch you’re currently on</i>
+    dt git branch
+    dd &lt;branchname&gt;
+    dt git branch
+    dd -d &lt;branchname&gt; <i>Delete branch</i>
     dt git checkout
-    dd &nbsp;&nbsp;thisbranch
+    dd &nbsp;&nbsp;&lt;branchname&gt;
     dt git checkout
-    dd -b mynewbranch <i>Create branch and checkout in one</i>
+    dd -b &lt;branchname&gt; <i>Create branch and checkout in one</i>
     dt git remote
     dd add &lt;origin&gt; https://github.com/eranotutamoh/herokusiteexpress.git
     dt git remote
     dd -v &nbsp;<i>List remotes</i>
     dt git push
     dd &lt;origin&gt; &lt;branch/master&gt;
+    dt git merge
+    dd &lt;branchname&gt;
+
+
 
 
