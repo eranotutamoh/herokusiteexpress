@@ -19,17 +19,17 @@ nav, section {
     min-height: 630px;
 }
 nav {
-    width: 175px;
+    width: 200px;
 }
 .mid {
     border-left: 2px solid #542800;
     border-right: 2px solid #542800;
     padding: 0 15px 0 25px;
-    width: 450px;
+    width: 466px;
 }
 .right {
     padding: 0 15px 0 25px;
-    width: 278px;
+    width: 260px;
 }
 a {
     color: #4FF93E;
@@ -53,6 +53,7 @@ input {
 form a {
      text-decoration: none  ;
      display: block;
+     margin-bottom: 15px;
  }
 #suggest {
     border: none;
