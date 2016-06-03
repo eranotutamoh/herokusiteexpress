@@ -15,16 +15,15 @@ body {
 }
 nav, section {
     display: inline-block;
-    overflow-y: auto;
     vertical-align: top;
-    height: 630px;
+    min-height: 630px;
 }
 nav {
     width: 175px;
 }
 .mid {
-    border-left: 1px solid #542800;
-    border-right: 1px solid #542800;
+    border-left: 2px solid #542800;
+    border-right: 2px solid #542800;
     padding: 0 15px 0 25px;
     width: 450px;
 }
