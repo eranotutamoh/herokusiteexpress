@@ -1,7 +1,10 @@
 (function() {
     var recipeList  = document.querySelector('#col3 ul');
     var showIngredient = document.querySelector('#ingText');
+    var clearButton = document.querySelector('#clear');
     var parameters = [];
+
+    clearButton.addEventListener('click' , clear)
 
     var suggest = Suggest.init({
         input : document.querySelector('#search'),
@@ -36,6 +39,12 @@
             a.appendChild(text);
             recipeList.appendChild(li, null);
         }
+    }
+
+    function clear() {
+        parameters = [];
+        showIngredient.textContent = "Recipes with:";
+        recipeList.innerHTML = "";
     }
 
     function lookupIngredients(searchString) {
