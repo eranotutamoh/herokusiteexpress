@@ -36,7 +36,7 @@
 
     function addIngredients(ings){
         for(i=0; i<ings.length; i++){
-            var capName = ings[i].childNodes[3].value;
+            var capName = (ings[i].childNodes[3].value).trim();
             capName = capName.charAt(0).toUpperCase() + capName.substr(1).toLowerCase();
             var ingQty =  capName +','+ ings[i].childNodes[1].value;
             addHidden(form , "ingredients" , ingQty);

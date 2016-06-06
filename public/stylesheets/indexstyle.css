@@ -9,11 +9,12 @@ body {
     background-color: lightgray;
     margin: 0 auto;
     padding: 25px 25px 25px 240px;
+    position: relative;
     width: 759px;
 }
 nav {
     background-color: gold;
-    left: 350px;
+    left: 30px;
     padding: 5px;
     position: absolute;
     top: 47px;
