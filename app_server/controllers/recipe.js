@@ -3,12 +3,11 @@ var apiOptions = {
     server : "http://localhost:3000"
 };
 if (process.env.NODE_ENV === 'production') {
-    apiOptions.server = "https://nameless-dusk-99213.herokuapp.com";
+    apiOptions.server = "https://utamoh.herokuapp.com";
 }
 
 // SEARCH BY INGREDIENTS
 module.exports.search = function (req, res) {
-    console.log('   IN SEARCH CONTROLLER####')
     renderHomepage(req, res);
 };
 var renderHomepage = function(req, res){
@@ -24,7 +23,6 @@ var renderHomepage = function(req, res){
 
 // LIST RECIPES
 module.exports.listrecipes = function (req, res) {
-    console.log('!');
     var requestOptions, path;
     path = '/api/recipes/';
     requestOptions = {
@@ -32,18 +30,16 @@ module.exports.listrecipes = function (req, res) {
         method: "GET",
         json: {}
     };
-    console.log('!!',requestOptions);
+    console.log('API INFO',requestOptions);
     request(
         requestOptions,
         function (err, response, body) {
-            console.log('!!!!!',response.statusCode)
             if (err)   console.log(err);
             else if (response.statusCode === 200)  renderRecipes(req, res, body);
             else console.log(response.statusCode);
         });
 }
 var renderRecipes = function(req, res, recipes){
-    console.log(':::',recipes);
     res.render('recipes', {
         title: 'Recipes',
         text: {
