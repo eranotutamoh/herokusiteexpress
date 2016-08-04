@@ -10,6 +10,13 @@ var routes = require('./app_server/routes/index');
 //var users = require('./app_server/routes/users');
 var routesApi = require('./app_api/routes/index');
 
+var allowCrossDomain = function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', 'http://localhost');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+
+  next();
+}
 
 var app = express();
 
@@ -24,6 +31,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(allowCrossDomain);
 
 app.use('/', routes);
 //app.use('/users', users);

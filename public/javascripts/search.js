@@ -6,6 +6,10 @@
 
     clearButton.addEventListener('click' , clear)
 
+
+    console.log('   IN SEARCH.JS@@@@')
+
+
     var suggest = Suggest.init({
         input : document.querySelector('#search'),
         suggestDiv : document.querySelector('#suggest'),
