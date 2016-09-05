@@ -5,6 +5,9 @@ body {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
     color: #F3DF3E;
 }
+html {
+    overflow-y: scroll;
+}
 .width {
     background-color:#341900 ;
     margin: 0 auto;
@@ -95,6 +98,9 @@ button#clear {
 form .ingredients {
     margin: 5px 0 10px;
     display: block;
+}
+input.wide {
+    width: 318px;
 }
 .ingredients input {
     display: inline-block;

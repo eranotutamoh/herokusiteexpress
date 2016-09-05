@@ -4,7 +4,7 @@ block content1
     h1 Edit !{title}
     form(action='' method='post')
         label Recipe name
-        input(type='text' name='name' value="#{title}")
+        input.wide(type='text' name='name' value="#{title}")
         h4 Ingredients
         each ing in ingred
             .ingredients
@@ -15,7 +15,7 @@ block content1
                 a.takeaway(href='#') -
         a.another(href='#') +
         label.beforeThis Instructions
-        textarea(rows='7' cols='40' name='instructions' ) #{text.desc}
+        textarea(rows='7' cols='51' name='instructions' ) #{text.desc}
         input(type="submit", value="Edit")
         input(type='hidden' name='recipeid' value='#{id}')
     .ingredients

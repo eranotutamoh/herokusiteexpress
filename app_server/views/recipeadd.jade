@@ -6,7 +6,7 @@ block content1
     p.error Please fill in all Fields
   form(action='' method='post')
     label Recipe name
-    input(type='text' name='name')
+    input.wide(type='text' name='name')
     h4 Ingredients
     .ingredients
       label Quantity
@@ -15,7 +15,7 @@ block content1
       input(type='text' name='iname')
     a.another(href='#') +
     label.beforeThis Instructions
-    textarea(rows='7' cols='40' name='instructions')
+    textarea.wide(rows='7' cols='51' name='instructions')
     input(type="submit", value="Add")
   .ingredients
     label Quantity
