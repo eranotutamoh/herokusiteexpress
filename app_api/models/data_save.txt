@@ -33,7 +33,7 @@ $ mongorestore -h ds023108.mlab.com:23108 -d eranot -u eranot -p Whatthefuck4 ~/
 $ mongodump -h ds023108.mlab.com:23108 -d eranot -c recipes -u eranot -p Whatthefuck4 -o ~/code/fromMlabDump
 
 //Restore local database from remote
-$ mongorestore --collection recipes --db recipe  ~/code/fromMlabDump/eranot/recipes.bson
+$ mongorestore --collection recipes --db recipe  ~/code/fromMlabDump/eranot/recipes.bson --drop
 
 
 

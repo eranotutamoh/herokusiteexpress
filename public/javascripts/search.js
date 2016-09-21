@@ -34,7 +34,7 @@
             var a = document.createElement("a");
             li.appendChild(a);
             var text = document.createTextNode(results[x].name);
-        a.setAttribute('href','/recipe/'+results[x]._id);
+            a.setAttribute('href','/recipe/'+results[x]._id);
             a.setAttribute('target','_blank');
             a.appendChild(text);
             recipeList.appendChild(li, null);
